@@ -1,0 +1,7 @@
+{
+  "name": "Care-For-you",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
