@@ -1,0 +1,14 @@
+<ion-list lines="full" no-margin class="ion-no-padding">
+  <ion-item *ngFor="let menu of menuOptions; let i = index" class="cursor-pointer" (click)="navigate(menu)"
+    [ngClass]="{'selected' : router.url == menu?.['navigate']}">
+    <ion-icon [name]="menu.iconName" class="ion-margin"
+      [color]=" router.url == menu?.['navigate'] ? 'secondary': ''"></ion-icon>
+    <ion-label [ngClass]="{'active' : router.url == menu?.['navigate']}">{{menu.displayName}}</ion-label>
+    <!-- <ion-router> -->
+    <!-- <ion-router-link>
+      <ion-button>Go to Page 2 </ion-button>
+    </ion-router-link> -->
+    <!-- </ion-router> -->
+  </ion-item>
+  {{router.url}}
+</ion-list>

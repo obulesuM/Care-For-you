@@ -1,0 +1,36 @@
+<ion-app>
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar color="secondary" class="d-flex" class="ion-align-items-center">
+        <div style="display: flex; align-items: center;">
+          <img class="logo" alt="Silhouette of a person's head" src="assets/logo/health-logo.jpg" />
+          <ion-title slot="start">
+
+            {{userInfo['firstName']}}</ion-title>
+        </div>
+
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-no-margin" class="ion-no-padding">
+      <app-side-menu-content></app-side-menu-content>
+    </ion-content>
+  </ion-menu>
+  <ion-header>
+    <ion-toolbar id="main-content" slot="start">
+      <ion-buttons slot="start">
+        <ion-menu-button>
+          <ion-avatar>
+            <img alt="Silhouette of a person's head" src="assets/logo/health-logo.jpg" />
+          </ion-avatar>
+        </ion-menu-button>
+      </ion-buttons>
+      <ion-title slot="start">
+        <span class="health">Health </span>
+        <span class="care">Care</span>
+      </ion-title>
+    </ion-toolbar></ion-header>
+
+  <ion-content class="ion-padding">
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-content>
+</ion-app>

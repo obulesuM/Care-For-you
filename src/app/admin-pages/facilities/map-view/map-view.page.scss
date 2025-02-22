@@ -1,0 +1,15 @@
+ion-content {
+    --background: var(--ion-color-primbg);
+    height: 100%;
+
+}
+
+ion-header {
+    opacity: 1 !important;
+    box-shadow: none;
+    background: var(--ion-color-primbg);
+}
+
+ion-toolbar {
+    --background: var(--ion-color-primbg);
+}

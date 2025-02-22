@@ -1,0 +1,26 @@
+<ion-header>
+  <div class="view-facilites  ion-padding">
+    <div class="view-css">
+      <div class="list" [ngClass]="{'selcted-view': selectedView == 'LIST'}" (click)="selectedView = 'LIST'">
+        <ion-icon name="list-outline"></ion-icon>
+      </div>
+      <div class="map" [ngClass]="{'selcted-view': selectedView == 'MAP'}" (click)="selectedView = 'MAP'">
+        <ion-icon color="primary" name="location-outline"></ion-icon>
+      </div>
+    </div>
+    <div class="add-css">
+      <div class="list">
+        <ion-icon name="add-outline"></ion-icon>
+        Add Facility
+      </div>
+    </div>
+  </div>
+</ion-header>
+<ion-content>
+  <ng-container *ngIf="selectedView == 'LIST'">
+    <app-list-view></app-list-view>
+  </ng-container>
+  <ng-container *ngIf="selectedView == 'MAP'">
+    <app-map-view></app-map-view>
+  </ng-container>
+</ion-content>

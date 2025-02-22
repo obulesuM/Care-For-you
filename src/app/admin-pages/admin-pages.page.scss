@@ -1,0 +1,25 @@
+ion-header {
+  opacity: 1 !important;
+  box-shadow: none;
+  --background: var(--ion-color-primbg);
+  border-bottom: 2px solid white;
+}
+
+ion-toolbar {
+  --background: var(--ion-color-primbg);
+  padding: 0.5em 0em;
+}
+
+.logo {
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+}
+
+.health {
+  color: var(--ion-color-tertiary);
+}
+
+.care {
+  color: var(--ion-color-success);
+}

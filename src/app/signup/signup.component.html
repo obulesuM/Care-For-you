@@ -1,0 +1,127 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="login"></ion-back-button>
+    </ion-buttons>
+    <ion-segment>
+      <ion-segment-button value="first" content-id="first">
+        <ion-label>Basic Details</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="third" content-id="third">
+        <ion-label>Other Details</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="container login-wrapper">
+    <ion-segment-view>
+      <ion-segment-content id="first">
+        <form [formGroup]="formData">
+          <ion-item lines="none" class="ion-item">
+            <fieldset class="input-item">
+              <legend>First Name</legend>
+              <ion-input formControlName="firstName" type="text" placeholder="Enter first name"></ion-input>
+            </fieldset>
+          </ion-item>
+          <ion-item lines="none" class="ion-item">
+            <fieldset class="input-item">
+              <legend>Middle Name</legend>
+              <ion-input formControlName="middleName" type="text" placeholder="Enter middle name"></ion-input>
+            </fieldset>
+          </ion-item>
+          <ion-item lines="none" class="ion-item">
+            <fieldset class="input-item">
+              <legend>Last Name</legend>
+              <ion-input formControlName="lastName" type="text" placeholder="Enter last name"></ion-input>
+            </fieldset>
+          </ion-item>
+          <ion-item lines="none" class="ion-item">
+            <fieldset class="input-item">
+              <legend>Email Id</legend>
+              <ion-input formControlName="email" type="email" placeholder="name@domain.com"></ion-input>
+            </fieldset>
+          </ion-item>
+          <ion-item lines="none" class="ion-item">
+            <fieldset class="input-item">
+              <legend>Password</legend>
+              <ion-input formControlName="password" type="password" placeholder="*******">
+                <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+              </ion-input>
+            </fieldset>
+          </ion-item>
+          <ion-item lines="none" class="ion-item">
+            <fieldset class="input-item">
+              <legend>Confirm Password</legend>
+              <ion-input formControlName="confirmPassword" type="password" placeholder="*******">
+                <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+              </ion-input>
+            </fieldset>
+          </ion-item>
+          <ion-item lines="none" class="ion-item">
+            <fieldset class="input-item date-time">
+              <ion-datetime-button datetime="datetime"></ion-datetime-button>
+            </fieldset>
+          </ion-item>
+        </form>
+      </ion-segment-content>
+      <ion-segment-content id="third">
+        <form [formGroup]="otherForm">
+          <ion-item lines="none" class="ion-item">
+            <fieldset class="input-item">
+              <legend>Mobile</legend>
+              <ion-input formControlName="mobile" type="number" placeholder="Enter mobile number"></ion-input>
+            </fieldset>
+          </ion-item>
+          <ion-item lines="none" class="ion-item">
+            <fieldset class="input-item">
+              <ion-select label="Gender" placeholder="Choose gender" formControlName="gender">
+                <ion-select-option value="Male">Male</ion-select-option>
+                <ion-select-option value="Female">Female</ion-select-option>
+                <ion-select-option value="Others">Others</ion-select-option>
+              </ion-select>
+            </fieldset>
+          </ion-item>
+          <ion-item lines="none" class="ion-item">
+            <fieldset class="input-item">
+              <legend>Address Lane 1</legend>
+              <ion-input formControlName="lane1" placeholder="Enter house number, street"></ion-input>
+            </fieldset>
+          </ion-item>
+          <ion-item lines="none" class="ion-item">
+            <fieldset class="input-item">
+              <legend>Address Lane 2</legend>
+              <ion-input formControlName="lane2" placeholder="Enter area and locality"></ion-input>
+            </fieldset>
+          </ion-item>
+          <ion-item lines="none" class="ion-item">
+            <fieldset class="input-item">
+              <legend>State</legend>
+              <ion-input formControlName="state" placeholder="Enter state"></ion-input>
+            </fieldset>
+          </ion-item>
+          <ion-item lines="none" class="ion-item">
+            <fieldset class="input-item">
+              <ion-select label="Nationality" [interfaceOptions]="customModalOptions" interface="modal"
+                placeholder="Select Nationality" formControlName="nationality">
+                @for (item of countriesList; track $index) {
+                <ion-select-option [value]="item.code">{{item.name}}</ion-select-option>
+                }
+              </ion-select>
+            </fieldset>
+          </ion-item>
+        </form>
+      </ion-segment-content>
+    </ion-segment-view>
+    <ion-modal [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime id="datetime"></ion-datetime>
+      </ng-template>
+    </ion-modal>
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="container login-wrapper">
+    <ion-button (click)="signUp()" class="login-button" expand="block">Signup</ion-button>
+  </div>
+</ion-footer>
